@@ -11,21 +11,21 @@ export type AppOpenDefinitionsHasAllEvents = ValidateAllEventsEnumAreImplemented
 
 export interface AppOpenDefinitions {
   /**
-   * Prepare interstitial banner
+   * Prepare app open banner
    *
-   * @group Interstitial
+   * @group AppOpen
    * @param options AdOptions
    * @since 1.1.2
    */
    prepareAppOpen(options: AdOptions): Promise<AdLoadInfo>;
 
    /**
-    * Show interstitial ad when it’s ready
+    * Show app open ad when it’s ready
     *
-    * @group Interstitial
+    * @group AppOpen
     * @since 1.1.2
     */
-  showInterstitial(): Promise<void>;
+  showAppOpen(): Promise<void>;
 
   addListener(
     eventName: AppOpenAdPluginEvents.FailedToLoad,

@@ -1,23 +1,23 @@
 // This enum should be keep in sync with their native equivalents with the same name
 export enum AppOpenAdPluginEvents {
   /**
-   * Emits after trying to prepare and Interstitial, when it is loaded and ready to be show
+   * Emits after trying to prepare and AppOpen, when it is loaded and ready to be show
    */
-  Loaded = 'interstitialAdLoaded',
+  Loaded = 'appOpenAdLoaded',
   /**
-   * Emits after trying to prepare and Interstitial, when it could not be loaded
+   * Emits after trying to prepare and AppOpen, when it could not be loaded
    */
-  FailedToLoad = 'interstitialAdFailedToLoad',
+  FailedToLoad = 'appOpenAdFailedToLoad',
   /**
-   * Emits when the Interstitial ad is visible to the user
+   * Emits when the AppOpen ad is visible to the user
    */
-  Showed = 'interstitialAdShowed',
+  Showed = 'appOpenAdShowed',
   /**
-   * Emits when the Interstitial ad is failed to show
+   * Emits when the AppOpen ad is failed to show
    */
-  FailedToShow = 'interstitialAdFailedToShow',
+  FailedToShow = 'appOpenAdFailedToShow',
   /**
-   * Emits when the Interstitial ad is not visible to the user anymore.
+   * Emits when the AppOpen ad is not visible to the user anymore.
    */
-  Dismissed= 'interstitialAdDismissed',
+  Dismissed= 'appOpenAdDismissed',
 }
