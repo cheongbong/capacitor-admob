@@ -12,4 +12,5 @@ export * from './interstitial/index';
 export * from './reward/index';
 export * from './consent/index';
 export * from './shared/index';
+export * from './appopen/index';
 export { AdMob };

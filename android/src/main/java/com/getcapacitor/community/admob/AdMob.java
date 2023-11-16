@@ -8,6 +8,8 @@ import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 import com.getcapacitor.annotation.Permission;
+import com.getcapacitor.community.admob.appopen.AdAppOpenExecutor;
+import com.getcapacitor.community.admob.appopen.AppOpenAdCallbackAndListeners;
 import com.getcapacitor.community.admob.banner.BannerExecutor;
 import com.getcapacitor.community.admob.consent.AdConsentExecutor;
 import com.getcapacitor.community.admob.helpers.AuthorizationStatusEnum;
@@ -45,6 +47,14 @@ public class AdMob extends Plugin {
         this::notifyListeners,
         getLogTag(),
         InterstitialAdCallbackAndListeners.INSTANCE
+    );
+
+    private final AdAppOpenExecutor adAppOpenExecutor = new AdAppOpenExecutor(
+            this::getContext,
+            this::getActivity,
+            this::notifyListeners,
+            getLogTag(),
+            AppOpenAdCallbackAndListeners.INSTANCE
     );
 
     private final AdConsentExecutor adConsentExecutor = new AdConsentExecutor(
@@ -146,6 +156,17 @@ public class AdMob extends Plugin {
     @PluginMethod
     public void removeBanner(final PluginCall call) {
         bannerExecutor.removeBanner(call);
+    }
+
+    @PluginMethod
+    public void prepareAppOpen(final PluginCall call) {
+        adAppOpenExecutor.prepareAppOpen(call, this::notifyListeners);
+    }
+
+    // Show interstitial Ad
+    @PluginMethod
+    public void showAppOpen(final PluginCall call) {
+        adAppOpenExecutor.showAppOpen(call, this::notifyListeners);
     }
 
     @PluginMethod
