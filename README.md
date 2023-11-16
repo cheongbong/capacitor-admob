@@ -338,6 +338,13 @@ AdMob.addListener(RewardAdPluginEvents.Rewarded, async () => {
 * [`addListener(RewardAdPluginEvents.Dismissed, ...)`](#addlistenerrewardadplugineventsdismissed-)
 * [`addListener(RewardAdPluginEvents.FailedToShow, ...)`](#addlistenerrewardadplugineventsfailedtoshow-)
 * [`addListener(RewardAdPluginEvents.Showed, ...)`](#addlistenerrewardadplugineventsshowed-)
+* [`prepareAppOpen(...)`](#prepareappopen)
+* [`showAppOpen()`](#showappopen)
+* [`addListener(AppOpenAdPluginEvents.FailedToLoad, ...)`](#addlistenerappopenadplugineventsfailedtoload-)
+* [`addListener(AppOpenAdPluginEvents.Loaded, ...)`](#addlistenerappopenadplugineventsloaded-)
+* [`addListener(AppOpenAdPluginEvents.Dismissed, ...)`](#addlistenerappopenadplugineventsdismissed-)
+* [`addListener(AppOpenAdPluginEvents.FailedToShow, ...)`](#addlistenerappopenadplugineventsfailedtoshow-)
+* [`addListener(AppOpenAdPluginEvents.Showed, ...)`](#addlistenerappopenadplugineventsshowed-)
 * [Interfaces](#interfaces)
 * [Type Aliases](#type-aliases)
 * [Enums](#enums)
@@ -847,6 +854,114 @@ addListener(eventName: RewardAdPluginEvents.Showed, listenerFunc: () => void) =>
 --------------------
 
 
+### prepareAppOpen(...)
+
+```typescript
+prepareAppOpen(options: AdOptions) => Promise<AdLoadInfo>
+```
+
+Prepare app open banner
+
+| Param         | Type                                            | Description                        |
+| ------------- | ----------------------------------------------- | ---------------------------------- |
+| **`options`** | <code><a href="#adoptions">AdOptions</a></code> | <a href="#adoptions">AdOptions</a> |
+
+**Returns:** <code>Promise&lt;<a href="#adloadinfo">AdLoadInfo</a>&gt;</code>
+
+--------------------
+
+
+### showAppOpen()
+
+```typescript
+showAppOpen() => Promise<void>
+```
+
+Show app open ad when it’s ready
+
+--------------------
+
+
+### addListener(AppOpenAdPluginEvents.FailedToLoad, ...)
+
+```typescript
+addListener(eventName: AppOpenAdPluginEvents.FailedToLoad, listenerFunc: (error: AdMobError) => void) => PluginListenerHandle
+```
+
+| Param              | Type                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| **`eventName`**    | <code><a href="#appopenadpluginevents">AppOpenAdPluginEvents.FailedToLoad</a></code> |
+| **`listenerFunc`** | <code>(error: <a href="#admoberror">AdMobError</a>) =&gt; void</code>                |
+
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener(AppOpenAdPluginEvents.Loaded, ...)
+
+```typescript
+addListener(eventName: AppOpenAdPluginEvents.Loaded, listenerFunc: (info: AdLoadInfo) => void) => PluginListenerHandle
+```
+
+| Param              | Type                                                                           |
+| ------------------ | ------------------------------------------------------------------------------ |
+| **`eventName`**    | <code><a href="#appopenadpluginevents">AppOpenAdPluginEvents.Loaded</a></code> |
+| **`listenerFunc`** | <code>(info: <a href="#adloadinfo">AdLoadInfo</a>) =&gt; void</code>           |
+
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener(AppOpenAdPluginEvents.Dismissed, ...)
+
+```typescript
+addListener(eventName: AppOpenAdPluginEvents.Dismissed, listenerFunc: () => void) => PluginListenerHandle
+```
+
+| Param              | Type                                                                              |
+| ------------------ | --------------------------------------------------------------------------------- |
+| **`eventName`**    | <code><a href="#appopenadpluginevents">AppOpenAdPluginEvents.Dismissed</a></code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>                                                        |
+
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener(AppOpenAdPluginEvents.FailedToShow, ...)
+
+```typescript
+addListener(eventName: AppOpenAdPluginEvents.FailedToShow, listenerFunc: (error: AdMobError) => void) => PluginListenerHandle
+```
+
+| Param              | Type                                                                                 |
+| ------------------ | ------------------------------------------------------------------------------------ |
+| **`eventName`**    | <code><a href="#appopenadpluginevents">AppOpenAdPluginEvents.FailedToShow</a></code> |
+| **`listenerFunc`** | <code>(error: <a href="#admoberror">AdMobError</a>) =&gt; void</code>                |
+
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### addListener(AppOpenAdPluginEvents.Showed, ...)
+
+```typescript
+addListener(eventName: AppOpenAdPluginEvents.Showed, listenerFunc: () => void) => PluginListenerHandle
+```
+
+| Param              | Type                                                                           |
+| ------------------ | ------------------------------------------------------------------------------ |
+| **`eventName`**    | <code><a href="#appopenadpluginevents">AppOpenAdPluginEvents.Showed</a></code> |
+| **`listenerFunc`** | <code>() =&gt; void</code>                                                     |
+
+**Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -1074,6 +1189,17 @@ From T, pick a set of properties whose keys are in the union K
 | **`FailedToShow`** | <code>'onRewardedVideoAdFailedToShow'</code> | Emits when the AdReward video is failed to show                                                                                                                                                                                                                                                                                                        |
 | **`Dismissed`**    | <code>'onRewardedVideoAdDismissed'</code>    | Emits when the AdReward video is not visible to the user anymore. **Important**: This has nothing to do with the reward it self. This event will emits in this two cases: 1. The user starts the video ad but close it before the reward emit. 2. The user start the video and see it until end, then gets the reward and after that the ad is closed. |
 | **`Rewarded`**     | <code>'onRewardedVideoAdReward'</code>       | Emits when user get rewarded from AdReward                                                                                                                                                                                                                                                                                                             |
+
+
+#### AppOpenAdPluginEvents
+
+| Members            | Value                                | Description                                                                       |
+| ------------------ | ------------------------------------ | --------------------------------------------------------------------------------- |
+| **`Loaded`**       | <code>'appOpenAdLoaded'</code>       | Emits after trying to prepare and AppOpen, when it is loaded and ready to be show |
+| **`FailedToLoad`** | <code>'appOpenAdFailedToLoad'</code> | Emits after trying to prepare and AppOpen, when it could not be loaded            |
+| **`Showed`**       | <code>'appOpenAdShowed'</code>       | Emits when the AppOpen ad is visible to the user                                  |
+| **`FailedToShow`** | <code>'appOpenAdFailedToShow'</code> | Emits when the AppOpen ad is failed to show                                       |
+| **`Dismissed`**    | <code>'appOpenAdDismissed'</code>    | Emits when the AppOpen ad is not visible to the user anymore.                     |
 
 </docgen-api>
 
