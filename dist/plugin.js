@@ -210,6 +210,31 @@ var AdMobPlugin = (function (exports, core) {
         AdmobConsentDebugGeography[AdmobConsentDebugGeography["NOT_EEA"] = 2] = "NOT_EEA";
     })(exports.AdmobConsentDebugGeography || (exports.AdmobConsentDebugGeography = {}));
 
+    // This enum should be keep in sync with their native equivalents with the same name
+    exports.AppOpenAdPluginEvents = void 0;
+    (function (AppOpenAdPluginEvents) {
+        /**
+         * Emits after trying to prepare and AppOpen, when it is loaded and ready to be show
+         */
+        AppOpenAdPluginEvents["Loaded"] = "appOpenAdLoaded";
+        /**
+         * Emits after trying to prepare and AppOpen, when it could not be loaded
+         */
+        AppOpenAdPluginEvents["FailedToLoad"] = "appOpenAdFailedToLoad";
+        /**
+         * Emits when the AppOpen ad is visible to the user
+         */
+        AppOpenAdPluginEvents["Showed"] = "appOpenAdShowed";
+        /**
+         * Emits when the AppOpen ad is failed to show
+         */
+        AppOpenAdPluginEvents["FailedToShow"] = "appOpenAdFailedToShow";
+        /**
+         * Emits when the AppOpen ad is not visible to the user anymore.
+         */
+        AppOpenAdPluginEvents["Dismissed"] = "appOpenAdDismissed";
+    })(exports.AppOpenAdPluginEvents || (exports.AppOpenAdPluginEvents = {}));
+
     const AdMob = core.registerPlugin('AdMob', {
         web: () => Promise.resolve().then(function () { return web; }).then(m => new m.AdMobWeb()),
     });
