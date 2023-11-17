@@ -20,6 +20,13 @@ export class AdMobWeb extends WebPlugin implements AdMobPlugin {
     });
   }
 
+  prepareAppOpen(_options: AdOptions): Promise<AdLoadInfo> {
+      throw new Error('Method not implemented.');
+  }
+  showAppOpen(): Promise<void> {
+      throw new Error('Method not implemented.');
+  }
+
   async initialize(): Promise<void> {
     console.log('initialize');
   }
