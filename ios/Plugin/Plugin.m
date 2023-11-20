@@ -20,4 +20,6 @@ CAP_PLUGIN(AdMob, "AdMob",
            CAP_PLUGIN_METHOD(showInterstitial, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(prepareRewardVideoAd, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(showRewardVideoAd, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(prepareAppOpen, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(showAppOpen, CAPPluginReturnPromise);
 )

@@ -14,6 +14,8 @@
 		50ADFFA42020D75100D50D53 /* Capacitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50ADFFA52020D75100D50D53 /* Capacitor.framework */; };
 		50ADFFA82020EE4F00D50D53 /* Plugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADFFA72020EE4F00D50D53 /* Plugin.m */; };
 		50E1A94820377CB70090CE1A /* Plugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1A94720377CB70090CE1A /* Plugin.swift */; };
+		680A4FB62B0B2DF100DE4D68 /* AppOpenAdPluginEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A4FB42B0B2DF100DE4D68 /* AppOpenAdPluginEvents.swift */; };
+		680A4FB72B0B2DF100DE4D68 /* AdAppOpenExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 680A4FB52B0B2DF100DE4D68 /* AdAppOpenExecutor.swift */; };
 		6B8F36778FA862CD784898F9 /* Pods_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37B3E6CBE27310D870AAB306 /* Pods_Plugin.framework */; };
 		BD7969382A4EA78C00B13412 /* ConsentExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7969372A4EA78C00B13412 /* ConsentExecutor.swift */; };
 		DB061C43263949D800538D26 /* BannerExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB061C40263949D800538D26 /* BannerExecutor.swift */; };
@@ -49,6 +51,8 @@
 		50ADFFA72020EE4F00D50D53 /* Plugin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Plugin.m; sourceTree = "<group>"; };
 		50E1A94720377CB70090CE1A /* Plugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plugin.swift; sourceTree = "<group>"; };
 		5B6E901548355A965349CB08 /* Pods-Plugin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plugin.release.xcconfig"; path = "Target Support Files/Pods-Plugin/Pods-Plugin.release.xcconfig"; sourceTree = "<group>"; };
+		680A4FB42B0B2DF100DE4D68 /* AppOpenAdPluginEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppOpenAdPluginEvents.swift; sourceTree = "<group>"; };
+		680A4FB52B0B2DF100DE4D68 /* AdAppOpenExecutor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdAppOpenExecutor.swift; sourceTree = "<group>"; };
 		85733EA4771EE2A613A26981 /* Pods-PluginTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.release.xcconfig"; path = "Target Support Files/Pods-PluginTests/Pods-PluginTests.release.xcconfig"; sourceTree = "<group>"; };
 		8CD030B4B8C10E265DB85A12 /* Pods-PluginTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PluginTests.debug.xcconfig"; path = "Target Support Files/Pods-PluginTests/Pods-PluginTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD7969372A4EA78C00B13412 /* ConsentExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsentExecutor.swift; sourceTree = "<group>"; };
@@ -121,6 +125,7 @@
 		50ADFF8A201F53D600D50D53 /* Plugin */ = {
 			isa = PBXGroup;
 			children = (
+				680A4FB32B0B2DF100DE4D68 /* AppOpen */,
 				BD7969362A4EA77900B13412 /* Consent */,
 				DBBC90F32697F26000F2A663 /* Helper */,
 				DB061C4926394B0400538D26 /* Rewarded */,
@@ -142,6 +147,15 @@
 				50ADFF98201F53D600D50D53 /* Info.plist */,
 			);
 			path = PluginTests;
+			sourceTree = "<group>";
+		};
+		680A4FB32B0B2DF100DE4D68 /* AppOpen */ = {
+			isa = PBXGroup;
+			children = (
+				680A4FB42B0B2DF100DE4D68 /* AppOpenAdPluginEvents.swift */,
+				680A4FB52B0B2DF100DE4D68 /* AdAppOpenExecutor.swift */,
+			);
+			path = AppOpen;
 			sourceTree = "<group>";
 		};
 		A797B9EFA3DCEFEA1FBB66A9 /* Frameworks */ = {
@@ -395,9 +409,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB061C5426394B5800538D26 /* InterstitialAdPluginEvents.swift in Sources */,
+				680A4FB72B0B2DF100DE4D68 /* AdAppOpenExecutor.swift in Sources */,
 				BD7969382A4EA78C00B13412 /* ConsentExecutor.swift in Sources */,
 				DB061C5526394B5800538D26 /* AdInterstitialExecutor.swift in Sources */,
 				DB061C5126394B4100538D26 /* AdRewardExecutor.swift in Sources */,
+				680A4FB62B0B2DF100DE4D68 /* AppOpenAdPluginEvents.swift in Sources */,
 				DBBC90F22697F1F400F2A663 /* AuthorizationStatusEnum.swift in Sources */,
 				DB061C44263949D800538D26 /* BannerAdPluginEvents.swift in Sources */,
 				DB061C43263949D800538D26 /* BannerExecutor.swift in Sources */,

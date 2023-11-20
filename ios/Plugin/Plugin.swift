@@ -14,6 +14,7 @@ public class AdMob: CAPPlugin {
     private let adInterstitialExecutor = AdInterstitialExecutor()
     private let adRewardExecutor = AdRewardExecutor()
     private let consentExecutor = ConsentExecutor()
+    private let appOpenExecutor = AdAppOpenExecutor()
 
     /**
      * Enable SKAdNetwork to track conversions
@@ -24,6 +25,7 @@ public class AdMob: CAPPlugin {
         self.adInterstitialExecutor.plugin = self
         self.adRewardExecutor.plugin = self
         self.consentExecutor.plugin = self
+        self.appOpenExecutor.plugin = self
         self.setRequestConfiguration(call)
 
         GADMobileAds.sharedInstance().start(completionHandler: nil)
@@ -121,6 +123,21 @@ public class AdMob: CAPPlugin {
         }
     }
 
+    @objc func prepareAppOpen(_ call: CAPPluginCall) {
+        let adUnitID = getAdId(call, "ca-app-pub-3940256099942544/3419835294")
+        let request = self.GADRequestWithOption(call.getBool("npa") ?? false)
+
+        DispatchQueue.main.async {
+            self.appOpenExecutor.prepareAppOpen(call, request, adUnitID)
+        }
+    }
+
+    @objc func showAppOpen(_ call: CAPPluginCall) {
+        DispatchQueue.main.async {
+            self.appOpenExecutor.showAppOpen(call)
+        }
+    }
+    
     /**
      *  AdMob: Rewarded Ads
      *  https://developers.google.com/ad-manager/mobile-ads-sdk/ios/rewarded-ads?hl=ja
