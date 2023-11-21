@@ -14,7 +14,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "CapacitorCommunityAdmob.podspec"
+    "PikopikaCapacitorAdmob.podspec"
   ],
   "author": "Masahiko Sakakibara <sakakibara@rdlabo.jp>",
   "license": "MIT",
