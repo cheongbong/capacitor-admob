@@ -249,11 +249,11 @@ public class AdMob: CAPPlugin {
         }
 
         if call.getBool("tagForChildDirectedTreatment") != nil {
-            GADMobileAds.sharedInstance().requestConfiguration.tag(forChildDirectedTreatment: call.getBool("tagForChildDirectedTreatment")!)
+            GADMobileAds.sharedInstance().requestConfiguration.tagForChildDirectedTreatment = call.getBool("tagForChildDirectedTreatment")!
         }
 
         if call.getBool("tagForUnderAgeOfConsent") != nil {
-            GADMobileAds.sharedInstance().requestConfiguration.tagForUnderAge(ofConsent: call.getBool("tagForUnderAgeOfConsent")!)
+            GADMobileAds.sharedInstance().requestConfiguration.tagForUnderAgeOfConsent = call.getBool("tagForUnderAgeOfConsent")!
         }
 
         if call.getString("maxAdContentRating") != nil {
